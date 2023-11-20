@@ -1,0 +1,135 @@
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: localhost    Database: academiaturmab
+-- ------------------------------------------------------
+-- Server version	8.0.35
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `alunos`
+--
+
+DROP TABLE IF EXISTS `alunos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alunos` (
+  `matricula` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `telefone` char(11) NOT NULL,
+  `end` varchar(256) DEFAULT NULL,
+  `cpf` char(11) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`matricula`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `alunos`
+--
+
+LOCK TABLES `alunos` WRITE;
+/*!40000 ALTER TABLE `alunos` DISABLE KEYS */;
+INSERT INTO `alunos` VALUES (25,'alunos','81998931827','rua vusconto','2517748963','gmail.com'),(26,'edinho','81876543450','rua vusconto','0','iago.avanco@g'),(28,'clarisse gomes da silva','81887654324','rua visconde de mamanguape','08735755565','clar@icloud.com'),(29,'oto','1221','oto','121','oto');
+/*!40000 ALTER TABLE `alunos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `funcionarios`
+--
+
+DROP TABLE IF EXISTS `funcionarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `funcionarios` (
+  `id_funcionario` int NOT NULL AUTO_INCREMENT,
+  `cpf` char(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `telefone` char(11) NOT NULL,
+  `endereco` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_funcionario`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `funcionarios`
+--
+
+LOCK TABLES `funcionarios` WRITE;
+/*!40000 ALTER TABLE `funcionarios` DISABLE KEYS */;
+INSERT INTO `funcionarios` VALUES (1,'75643251234','funcionarios','83997854126','rua otavio'),(2,'89123456765','bala mil','83991112336','rua do carmo'),(3,'12344201365','iago','81237854126','rua eva'),(4,'81345201365','edinho','81765854126','rua farias'),(5,'81245301365','patricia','82347854126','rua catulo'),(6,'65463411365','nenea','81876543212','rua esdras'),(7,'11111111111','silvio junior','11876543212','rua campo grande'),(9,'08765434561','zenilza francisca da silva','81787886543','rua natal bloco 81 quadra 7 apartamento 65');
+/*!40000 ALTER TABLE `funcionarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `modalidade`
+--
+
+DROP TABLE IF EXISTS `modalidade`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `modalidade` (
+  `id_modalidade` int NOT NULL AUTO_INCREMENT,
+  `nome_modalidade` varchar(100) NOT NULL,
+  `atleta` varchar(100) NOT NULL,
+  `duracao` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_modalidade`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `modalidade`
+--
+
+LOCK TABLES `modalidade` WRITE;
+/*!40000 ALTER TABLE `modalidade` DISABLE KEYS */;
+INSERT INTO `modalidade` VALUES (1,'modalidade','iago','1 hora'),(2,'volei','clarisse','1 hora'),(3,'futebol','luiz','2 horas'),(4,'corrida de cavalo','thiago','1 hora'),(5,'jogo da velha','lima','30 minutos');
+/*!40000 ALTER TABLE `modalidade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `personal`
+--
+
+DROP TABLE IF EXISTS `personal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `personal` (
+  `cpf` char(11) NOT NULL,
+  `cref` char(6) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `telefone` char(11) NOT NULL,
+  `endereco` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`cpf`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personal`
+--
+
+LOCK TABLES `personal` WRITE;
+/*!40000 ALTER TABLE `personal` DISABLE KEYS */;
+INSERT INTO `personal` VALUES ('08765434567','134216','pablo','82345874532','rua amparo'),('08767680540','222222','333','444','555'),('11111111111','111111','teste','11111111111','rua teste'),('12344433333','333456','ana','81887111532','rua bonfim'),('12344456784','123456','pedro','81887874532','rua castro alves'),('34224456784','213456','alice','81345674532','rua domingo'),('54321456784','654321','douglas','81887871111','rua da se');
+/*!40000 ALTER TABLE `personal` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-11-19 23:46:03
